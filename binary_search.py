@@ -10,6 +10,11 @@ class BinarySearch(list):
 		count = 0 
 		result = {}
 
+		if item == self[-1]:
+			return {"count":count, "index":last}
+		if item == self[0]:
+			return {"count":count, "index":first}
+
 		while first<=last and not found:
 			center = (first + last)//2
 			if self[center] == item:
@@ -33,10 +38,3 @@ class BinarySearch(list):
 
 		return result
 
-one_to_twenty = BinarySearch(20, 1)
-ten_to_thousand = BinarySearch(100, 10)
-two_to_forty = BinarySearch(20, 2)
-
-print(one_to_twenty.search(16))
-print(ten_to_thousand.search(10000))
-print(two_to_forty.search(33))
